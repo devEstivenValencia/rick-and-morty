@@ -1,0 +1,115 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  font-family: Google Sans
+}
+
+.inputGroup {
+  margin: 1em 0 1em 0;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 5px; */
+  
+}
+
+.inputGroup .input {
+  position: relative;
+}
+
+.inputGroup button {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.inputGroup input {
+  font-size: 14px;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: transparent;
+  border-radius: 10px;
+  width: 100%;
+  line-height: 0;
+  margin: 10px 0;
+}
+
+.inputGroup label {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+  display: flex;
+  gap: 5px;
+  letter-spacing: 0.25px;
+}
+
+.inputGroup label.active {
+  display: none;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-10%) scale(.9);
+  margin: 0em;
+  margin-left: 1em;
+  padding: 0.4em;
+  background-color: #fff;
+}
+
+.inputGroup input:not(:placeholder-shown)+label {
+  background-color: lightblue;
+  display: none;
+}
+
+.inputGroup input:is(:placeholder-shown)~label.active {
+  display: flex;
+}
+
+.inputGroup label.invalid {
+  color: red;
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+
+.inputGroup label.valid {
+  color: green;
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+
+.inputGroup label.invalid i {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  margin: auto 0;
+}
+
+.inputGroup label.valid i {
+  display: inline;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+}

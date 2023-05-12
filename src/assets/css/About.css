@@ -1,0 +1,50 @@
+#About .card {
+  align-items: center;
+  /* height: 254px; */
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 26px;
+  box-shadow:
+    35px 35px 68px 0px rgba(157, 177, 255, 0.2),
+    inset -8px -8px 16px 0px rgba(157, 177, 255, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+#About .card:hover {
+  box-shadow: 35px 35px 68px 0px rgba(157, 177, 255, 0.5);
+}
+
+#About .card:active {
+  border: 1px solid blue;
+  transform: scale(0.95);
+}
+
+#About img#avatar {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 200px;
+  /* 
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+}
+
+#About .card p {
+  text-align: justify;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding: 20px;
+  font-family: Google Sans;
+  letter-spacing: 1;
+}

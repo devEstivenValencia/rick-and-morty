@@ -1,0 +1,90 @@
+main {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+
+main p {
+  font-size: 16px;
+}
+
+main p b {
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+main .description {
+  margin: 10px 0;
+}
+
+main .character {
+  align-items: center;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+  margin: 10px 0;
+}
+
+main .character img {
+  border-radius: 10%;
+  display: flex;
+  height: 100%;
+  z-index: 0;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+main .character p {
+  background-color: aliceblue;
+  bottom: 5%;
+  margin: 0;
+  max-width: 300px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+main .character p.Dead {
+  text-decoration: line-through;
+}
+
+.character i {
+  inset: 0;
+  position: absolute;
+  /* transition: 0.5s; */
+  display: flex;
+}
+
+main .character img.Dead {
+  opacity: 0.25;
+}
+
+.character i.Dead:nth-child(1) {
+  border-right: 1px solid #f00;
+  /* filter: drop-shadow(0 0 20px #f00, ); */
+  box-shadow: 0 0 1px #fff, 0 0 3px #f00;
+  transform: translateX(200px) rotate(315deg)translateY(-70px);
+  height: 400px;
+  width: 0;
+  z-index: 2;
+}
+
+.character i.Dead:nth-child(2) {
+  border-right: 1px solid #f00;
+  /* filter: drop-shadow(0 0 20px #f00, ); */
+  box-shadow: 0 0 1px #fff, 0 0 3px #f00;
+  transform: translateX(99px) rotate(45deg)translateY(-70px);
+  height: 400px;
+  width: 0;
+  z-index: 2;
+}

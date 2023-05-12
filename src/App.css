@@ -1,0 +1,365 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding-top: 90px;
+}
+
+header {
+  /* position: absolute; */
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #eaeaea;
+  height: 90px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+header nav {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 0 100px;
+  flex-wrap: wrap;
+}
+
+header nav .menuNav {
+  display: flex;
+  gap: 15px;
+}
+
+header nav .menuNav button {
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  padding: 3px 12px;
+}
+
+header nav .menuNav button:hover {
+  text-shadow: 0 0 1px #333, 0 0 1px #fff, 2px 2px 2px rgba(255, 255, 255, 0);
+}
+
+
+#imgTittle {
+  height: 45px;
+}
+
+.logo {
+  transition: filter 300ms;
+  will-change: filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.searchBar {
+  display: flex;
+}
+
+.searchBar button {
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.searchBar button:focus {
+  outline: 0;
+}
+
+.searchBar button span {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: text-decoration 250ms ease-in-out;
+}
+
+.searchBar button+button span {
+  margin-left: 10px;
+}
+
+.searchBar button:hover span {
+  text-decoration: none;
+  text-shadow: 0 0 1px #333, 0 0 1px #fff, 2px 2px 2px rgba(255, 255, 255, 0);
+}
+
+.searchBar input {
+  border: 1px solid;
+  border-radius: 5px;
+  margin-right: 10px;
+  /* margin: 0 1.5rem; */
+  padding: 5px 10px;
+}
+
+.searchBar input::placeholder {
+  font-family: Google Sans;
+  letter-spacing: 0.25px;
+}
+
+#MainTittle {
+  color: #12b0c9;
+  font-family: Get Schwifty;
+  font-size: 7.5rem;
+  margin: 20px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #000;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1;
+  margin: 1em;
+  padding: 1em;
+  padding-bottom: 35px;
+  width: 250px;
+}
+
+.card a {
+  color: #000;
+  font-weight: normal;
+}
+
+.card a:hover {
+  color: #000;
+}
+
+.card .img {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  width: 225px;
+}
+
+.card .img img {
+  border-radius: 10px;
+  margin: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.card .img img.Dead {
+  opacity: 0.35;
+}
+
+.card span.status {
+  /* background-color: rgba(234, 234, 234, 1); */
+  bottom: 0;
+  display: flex;
+  font-family: Cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin: 0;
+  padding: 5px 0;
+  position: absolute;
+  transform: translateY(-10px);
+  width: 100%;
+  /* color: #00FF00; */
+}
+
+.card span.status.Alive {
+  color: green;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #00ff00, 0 0 20px #333, 0 0 30px #00ff00, 2px 2px 2px rgba(255, 255, 255, 0);
+}
+
+.card span.status.Dead {
+  color: red;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff0000, 0 0 30px #ff0000, 2px 2px 2px rgba(255, 255, 255, 0);
+}
+
+.card span.status.unknown {
+  color: #000;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #333, 0 0 30px #333, 2px 2px 2px rgba(255, 255, 255, 0);
+}
+
+.card p {
+  font-family: Poppins;
+  font-size: 12px;
+  text-align: center;
+}
+
+.card div.name {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.card p.character {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+
+.card p.character.Dead {
+  text-decoration: line-through;
+}
+
+.card p.character+i {
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 14px;
+  margin-left: 10px;
+  width: 14px;
+}
+
+.card .card_description {
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10px;
+}
+
+.card .card_description p {
+  font-size: 14px;
+  margin: 7.5px 0;
+  text-align: center;
+}
+
+/* .card .card_description p.logo {
+  display: block;
+}
+
+.card .card_description p.logo2 {
+  display: none;
+}
+
+.card:hover .card_description p.logo2 {
+  display: block;
+}
+
+.card:hover .card_description p.logo {
+  display: none;
+} */
+
+.card .card_description i {
+  display: flex;
+  font-size: 16px;
+  /* width: 20px; */
+}
+
+.card .card_ubication {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.card .card_ubication+.card_ubication {
+  padding: 2.5px 0;
+}
+
+.card .card_ubication img {
+  height: 15px;
+  width: 15px;
+}
+
+.card .card_ubication p {
+  height: auto;
+  margin: 0;
+  margin-left: 5px;
+  word-break: break-all;
+}
+
+.card button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  box-shadow: #1a1a1a;
+  display: flex;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s;
+  z-index: 9;
+}
+
+.card button i {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 7.5px;
+  border-radius: 8px;
+  display: flex;
+  font-size: 20px;
+  margin: 0;
+  padding: 7.5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: border-color 0.25s;
+  z-index: 9;
+}
+
+.card button:hover i {
+  border-color: #646cff;
+  z-index: 9;
+}
+
+.card button.favorite i,
+.card button.noFavorite i {
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-shadow: 10px #00ff00;
+  color: #333;
+  left: 0;
+  position: absolute;
+  transform: translateX(20px) translateY(20px);
+  width: fit-content;
+  transition: color 0.15s linear;
+}
+
+.card button.favorite i {
+  color: red;
+}
+
+
+.card .id {
+  border-radius: 8px;
+  bottom: 0;
+  display: flex;
+  font-size: 12px;
+  left: 0;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  transition: all 250ms;
+}
+
+.card:hover .id {
+  font-family: Poppins;
+  text-shadow: 0 0 1px #000, 0 0 1px #fff, 2px 2px 2px rgba(255, 255, 255, 0);
+}
