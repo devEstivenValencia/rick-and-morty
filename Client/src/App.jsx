@@ -9,7 +9,7 @@ import Nav from './components/Nav'
 import About from './components/About'
 import Detail from './components/Detail'
 import Form from './components/Form'
-import Favorites  from './components/Favorites'
+import Favorites from './components/Favorites'
 
 function App() {
   const navigate = useNavigate();
@@ -32,13 +32,15 @@ function App() {
   }
 
   function onSearch(id) {
-    if (id <= 0 || id > 826) window.alert('¡No hay personajes con este ID!')
-
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-      if (data.name) {
-        setCharacters((oldChars) => [...oldChars, data])
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("¡No hay personajes con este ID!");
+        }
       }
-    })
+    );
   }
 
   function onClose(id) {

@@ -13,10 +13,10 @@ const Cards = ({ characters, onClose }) => {
                      status={status}
                      species={species}
                      gender={gender}
-                     origin={origin.name}
+                     origin={origin?.name}
                      image={image}
                      onClose={onClose}
-                     location={location.name}
+                     location={location?.name}
                   />
                )
             })

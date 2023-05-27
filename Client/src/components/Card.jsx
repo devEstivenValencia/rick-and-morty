@@ -10,7 +10,6 @@ const Card = ({ id, name, status, species, gender, origin, image, onClose, locat
       isFav ? removeFav(id) : addFav({ id, name, status, species, gender, origin, image, onClose, location });
       setIsFav(!isFav)
    };
-
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
